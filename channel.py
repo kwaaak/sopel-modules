@@ -60,53 +60,53 @@ def today(bot, trigger):
 
 @sopel.module.commands('askreddit', 'asscredit')
 def ask(bot, trigger):
-  header =  {"User-Agent": "sopel the bot"}
+  header =  {"User-Agent": "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"}
   bot.say(choice(requests.get("http://www.reddit.com/r/askreddit.json?limit=100", headers=header).json()["data"]["children"])["data"]["title"])
 
 @sopel.module.commands('shower')
 def shower(bot, trigger):
-  header =  {"User-Agent": "sopel the bot"}
+  header =  {"User-Agent": "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"}
   bot.say(choice(requests.get("http://www.reddit.com/r/showerthoughts.json?limit=100", headers=header).json()["data"]["children"])["data"]["title"])
 
 @sopel.module.commands('5050')
 def fifty(bot, trigger):
-  header =  {"User-Agent": "sopel the bot"}
+  header =  {"User-Agent": "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"}
   pick = choice(requests.get("http://www.reddit.com/r/fiftyfifty.json?limit=100", headers=header).json()["data"]["children"])["data"]
   bot.say("%s - %s" % (pick["title"], pick["url"]))
 
 @sopel.module.commands('til')
 def til(bot, trigger):
-  header =  {"User-Agent": "sopel the bot"}
+  header =  {"User-Agent": "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"}
   pick = choice(requests.get("http://www.reddit.com/r/todayilearned.json?limit=100", headers=header).json()["data"]["children"])["data"]
   bot.say("%s" % (pick["title"]))
 
 @sopel.module.commands('beat')
 def beat(bot, trigger):
-  header =  {"User-Agent": "sopel the bot"}
+  header =  {"User-Agent": "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"}
   pick = choice(requests.get("http://www.reddit.com/r/beatheads.json?limit=100", headers=header).json()["data"]["children"])["data"]
   bot.say("%s" % (pick["url"]))
 
 @sopel.module.commands('kadse', 'kazachstan', 'c@')
 def kadse(bot, trigger):
-  header =  {"User-Agent": "sopel the bot"}
+  header =  {"User-Agent": "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"}
   pick = choice(requests.get("http://www.reddit.com/r/catgifs.json?limit=100", headers=header).json()["data"]["children"])["data"]
   bot.say("%s" % (pick["url"]))
 
 @sopel.module.commands('newbeat','latest')
 def newbeat(bot, trigger):
-  header =  {"User-Agent": "sopel the bot"}
+  header =  {"User-Agent": "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"}
   pick = choice(requests.get("http://www.reddit.com/r/beatheads/new.json?limit=1", headers=header).json()["data"]["children"])["data"]
   bot.say("%s" % (pick["url"]))
 
 @sopel.module.commands('tifu')
 def tifu(bot, trigger):
-  header =  {"User-Agent": "sopel the bot"}
+  header =  {"User-Agent": "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"}
   pick = choice(requests.get("http://www.reddit.com/r/tifu.json?limit=100", headers=header).json()["data"]["children"])["data"]
   bot.say("%s - %s" % (pick["title"], pick["url"]))
 
 @sopel.module.commands('rather')
 def rather(bot, trigger):
-  header =  {"User-Agent": "sopel the bot"}
+  header =  {"User-Agent": "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"}
   bot.say(choice(requests.get("http://www.reddit.com/r/wouldyourather.json?limit=100", headers=header).json()["data"]["children"])["data"]["title"])
 
 @sopel.module.commands('youporn', 'yp')
