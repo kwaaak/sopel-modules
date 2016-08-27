@@ -12,12 +12,12 @@ import random
 
 @sopel.module.commands('quakecon')
 def quakecon(bot, trigger):
-   now = datetime.datetime.now()     
-   qcon = datetime.datetime(2016, 8, 4, 10)
+   now = datetime.datetime.now()
+   qcon = datetime.datetime(2017, 8, 4, 10)
    delta = qcon - now
    if delta.days < 6:
       hours, remainder = divmod(delta.seconds, 3600)
-      minutes, seconds = divmod(remainder, 60) 
+      minutes, seconds = divmod(remainder, 60)
       output = "{days} days, {hours} hours, {minutes} minutes, and {seconds} seconds until QuakeCon!".format(days=delta.days, hours=hours, minutes=minutes, seconds=seconds)
    else:
       output = "%s days until QuakeCon!" % delta.days
@@ -26,7 +26,7 @@ def quakecon(bot, trigger):
 @sopel.module.commands('blizzcon')
 def blizzcon(bot, trigger):
    now = datetime.datetime.now()
-   target = datetime.datetime(2015, 11, 6, 0)
+   target = datetime.datetime(2016, 11, 4, 0)
    delta = target - now
    if delta.days < 7:
       hours, remainder = divmod(delta.seconds, 3600)
@@ -39,7 +39,7 @@ def blizzcon(bot, trigger):
 @sopel.module.commands('zen')
 def zen(bot, trigger):
    bot.say(requests.get("https://api.github.com/zen").text)
-   
+
 @sopel.module.commands('whatgameisthayacurrentlyplaying')
 def whatgameisthayacurrentlyplaying(bot, trigger):
    bot.say("banned.")
@@ -85,7 +85,7 @@ def beat(bot, trigger):
   header =  {"User-Agent": "sopel the bot"}
   pick = choice(requests.get("http://www.reddit.com/r/beatheads.json?limit=100", headers=header).json()["data"]["children"])["data"]
   bot.say("%s" % (pick["url"]))
-  
+
 @sopel.module.commands('kadse', 'kazachstan', 'c@')
 def kadse(bot, trigger):
   header =  {"User-Agent": "sopel the bot"}
@@ -147,7 +147,7 @@ def reverseDict(bot, trigger):
     if result:
       reply = "Possible words matching '%s': %s" % (word, ", ".join(w["word"] for w in result[0:5]))
       bot.say(reply)
-      
+
 @sopel.module.commands("lenny")
 def lenny(bot, trigger):
   bot.say(u"( ͡° ͜ʖ ͡°)")
@@ -155,7 +155,7 @@ def lenny(bot, trigger):
 @sopel.module.commands("shrug1")
 def shrug1(bot, trigger):
   bot.say(u"¯\_(ツ)_/¯")
-  
+
 @sopel.module.commands("shrug2")
 def shrug2(bot, trigger):
   bot.say(u"¯\(º_o)/¯")
@@ -163,7 +163,7 @@ def shrug2(bot, trigger):
 @sopel.module.commands("shrug3")
 def shrug3(bot, trigger):
   bot.say(u"┐(ツ)┌")
-  
+
 @sopel.module.commands("wowalert")
 def wowalert(bot, trigger):
   bot.say("http://launcher.worldofwarcraft.com/alert (US); http://status.wow-europe.com/en/alert (EU)")

@@ -3,7 +3,7 @@ import sopel
 import re
 from sopel.tools import SopelMemory
 
-announce_chan = "#willie-testing"
+announce_chan = "#pony.ql"
 streamers = [
   "qlrankstv",
   "phixxion",
