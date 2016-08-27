@@ -6,6 +6,7 @@ from __future__ import unicode_literals
 import json
 import re
 
+from sopel.tools import SopelMemory
 from sopel import web
 from sopel.module import commands, example, rule
 
