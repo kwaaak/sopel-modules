@@ -37,7 +37,10 @@ def vimeo_by_url(bot, trigger, found_match=None):
     #if 'upload_date' in resp[0]:
     #    output += u" | Uploaded: %s" % (str(resp[0]['upload_date']))
     if 'duration' in resp[0]:
-        output += u" | Duration: %s" % (str(resp[0]['duration']))
+        m, s = divmod(resp[0]['duration'], 60)
+        h, m = divmod(m, 60)
+        duration = "%02d:%02d:%02d" % (h, m, s)
+        output += u" | Duration: %s" % (duration)
     if 'stats_number_of_plays' in resp[0]:
         output += u" | Views : %s" % (str(resp[0]['stats_number_of_plays']))
     #if 'stats_number_of_comments' in resp[0]:
