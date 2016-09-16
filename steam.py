@@ -25,7 +25,7 @@ def get_steam_info(url):
     soup = BeautifulSoup(page, 'lxml', from_encoding="utf-8")
 
     name = soup.find('div', {'class': 'apphub_AppName'}).text
-    desc = ": " + soup.find('div', {'class': 'game_description_snippet'}).text.strip()``
+    desc = ": " + soup.find('div', {'class': 'game_description_snippet'}).text.strip()
     desc = (desc[:127] + '...') if len(desc) > 130 else desc
 
     # the page has a ton of returns and tabs
